@@ -1,8 +1,8 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.scss',
+  tag: 'iiif-gallery',
+  styleUrl: 'iiif-gallery.scss',
   shadow: true
 })
 export class MyComponent {

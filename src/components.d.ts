@@ -4,34 +4,35 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-import { MyComponent as MyComponent } from './components/my-component/my-component';
 
-interface HTMLMyComponentElement extends MyComponent, HTMLElement {
-}
-declare var HTMLMyComponentElement: {
-  prototype: HTMLMyComponentElement;
-  new (): HTMLMyComponentElement;
-};
+import {
+  MyComponent as IiifGallery
+} from './components/iiif-gallery/iiif-gallery';
+
 declare global {
+  interface HTMLIiifGalleryElement extends IiifGallery, HTMLElement {
+  }
+  var HTMLIiifGalleryElement: {
+    prototype: HTMLIiifGalleryElement;
+    new (): HTMLIiifGalleryElement;
+  };
   interface HTMLElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+    "iiif-gallery": HTMLIiifGalleryElement;
   }
   interface ElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+    "iiif-gallery": HTMLIiifGalleryElement;
   }
   namespace JSX {
-      interface IntrinsicElements {
-          "my-component": JSXElements.MyComponentAttributes;
-      }
+    interface IntrinsicElements {
+      "iiif-gallery": JSXElements.IiifGalleryAttributes;
+    }
   }
   namespace JSXElements {
-      export interface MyComponentAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          first?: string,
-          last?: string
-      }
+    export interface IiifGalleryAttributes extends HTMLAttributes {
+      
+        first?: string,
+        last?: string
+    }
   }
 }
 

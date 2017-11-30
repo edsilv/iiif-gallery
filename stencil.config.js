@@ -1,8 +1,8 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'iiifgallery',
   generateDistribution: true,
   bundles: [
-    { components: ['my-component'] }
+    { components: ['iiif-gallery'] }
   ]
 };
 
