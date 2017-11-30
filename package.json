@@ -18,19 +18,21 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "@stencil/core": "next"
+    "@stencil/core": "next",
+    "manifesto.js": "github:iiif-commons/manifesto"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
     "@types/jest": "^21.1.1",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "classnames": "^2.2.5"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edsilv/iiif-gallery.git"
   },
-  "author": "Ionic Team",
+  "author": "@edsilv",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/edsilv/iiif-gallery"

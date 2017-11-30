@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+	<title>IIIF Gallery Component</title>
+	<script src="https://unpkg.com/manifesto.js/dist/client/manifesto.bundle.js"></script>
+	<script src="build/iiifgallery.js"></script>
 </head>
+
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+	<script>
+
+		window.addEventListener('DOMContentLoaded', () => {
+
+			const iiifGallery = document.querySelector('iiif-gallery');
+
+			iiifGallery.addEventListener('onSelectManifest', function (evt) {
+				console.log('select manifest:', evt.detail.getDefaultLabel() || 'no label');
+			});
+
+			iiifGallery.addEventListener('onSelectCollection', function (evt) {
+				console.log('select collection:', evt.detail.getDefaultLabel() || 'no label');
+			});
+
+			iiifGallery.addEventListener('onSelectCanvas', function (evt) {
+				console.log('select canvas:', evt.detail.getDefaultLabel() || 'no label');
+			});
+
+			const resetBtn = document.getElementById('reset');
+
+			resetBtn.onclick = () => {
+				iiifGallery.reset();
+			}
+		});
+	</script>
+
+	<iiif-gallery manifest="http://wellcomelibrary.org/iiif/b18035723/manifest"></iiif-gallery>
+
+	<p>
+		<button id="reset">Reset</button>
+	</p>
 
 </body>
+
 </html>

@@ -6,7 +6,38 @@
 
 
 import {
-  MyComponent as IiifGallery
+  IIIFExplorerItem as IiifExplorerItem
+} from './components/iiif-gallery-item/iiif-gallery-item';
+
+declare global {
+  interface HTMLIiifExplorerItemElement extends IiifExplorerItem, HTMLElement {
+  }
+  var HTMLIiifExplorerItemElement: {
+    prototype: HTMLIiifExplorerItemElement;
+    new (): HTMLIiifExplorerItemElement;
+  };
+  interface HTMLElementTagNameMap {
+    "iiif-explorer-item": HTMLIiifExplorerItemElement;
+  }
+  interface ElementTagNameMap {
+    "iiif-explorer-item": HTMLIiifExplorerItemElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "iiif-explorer-item": JSXElements.IiifExplorerItemAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface IiifExplorerItemAttributes extends HTMLAttributes {
+      
+        item?: Manifesto.IIIIFResource
+    }
+  }
+}
+
+
+import {
+  IIIFGallery as IiifGallery
 } from './components/iiif-gallery/iiif-gallery';
 
 declare global {
@@ -30,8 +61,7 @@ declare global {
   namespace JSXElements {
     export interface IiifGalleryAttributes extends HTMLAttributes {
       
-        first?: string,
-        last?: string
+        manifest?: string
     }
   }
 }
