@@ -1,7 +1,7 @@
 {
-  "name": "my-name",
+  "name": "iiif-gallery",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/collection/index.js",
   "types": "dist/collection/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -48,5 +48,10 @@
       "json",
       "jsx"
     ]
-  }
+  },
+  "keywords": [
+    "iiif",
+    "gallery",
+    "webcomponent"
+  ]
 }
