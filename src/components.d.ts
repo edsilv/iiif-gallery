@@ -6,29 +6,29 @@
 
 
 import {
-  IIIFExplorerItem as IiifExplorerItem
+  IIIFGalleryItem as IiifGalleryItem
 } from './components/iiif-gallery-item/iiif-gallery-item';
 
 declare global {
-  interface HTMLIiifExplorerItemElement extends IiifExplorerItem, HTMLElement {
+  interface HTMLIiifGalleryItemElement extends IiifGalleryItem, HTMLElement {
   }
-  var HTMLIiifExplorerItemElement: {
-    prototype: HTMLIiifExplorerItemElement;
-    new (): HTMLIiifExplorerItemElement;
+  var HTMLIiifGalleryItemElement: {
+    prototype: HTMLIiifGalleryItemElement;
+    new (): HTMLIiifGalleryItemElement;
   };
   interface HTMLElementTagNameMap {
-    "iiif-explorer-item": HTMLIiifExplorerItemElement;
+    "iiif-gallery-item": HTMLIiifGalleryItemElement;
   }
   interface ElementTagNameMap {
-    "iiif-explorer-item": HTMLIiifExplorerItemElement;
+    "iiif-gallery-item": HTMLIiifGalleryItemElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "iiif-explorer-item": JSXElements.IiifExplorerItemAttributes;
+      "iiif-gallery-item": JSXElements.IiifGalleryItemAttributes;
     }
   }
   namespace JSXElements {
-    export interface IiifExplorerItemAttributes extends HTMLAttributes {
+    export interface IiifGalleryItemAttributes extends HTMLAttributes {
       
         item?: Manifesto.IIIIFResource
     }

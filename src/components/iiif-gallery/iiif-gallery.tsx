@@ -1,4 +1,4 @@
-/// <reference path="../../../node_modules/manifesto.js/dist/manifesto.d.ts" />
+/// <reference types="manifesto.js" />
 
 import { Component, Prop, State, Listen, Event, EventEmitter, Method } from '@stencil/core';
 
@@ -59,13 +59,9 @@ export class IIIFGallery {
 		} else {
 
 			return ( 
-				<div class="items">
-				{
-					this.items.map((item) => 
-						<iiif-gallery-item item={item} selected={this._selectedItem === item}></iiif-gallery-item>
-					)
-				}
-				</div>
+				this.items.map((item) => 
+					<iiif-gallery-item item={item} selected={this._selectedItem === item}></iiif-gallery-item>
+				)
 			)
 		}
 	}

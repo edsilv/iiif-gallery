@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@stencil/core": "next",
-    "manifesto.js": "github:iiif-commons/manifesto"
+    "manifesto.js": "2.2.1"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",

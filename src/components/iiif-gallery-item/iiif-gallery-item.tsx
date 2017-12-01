@@ -2,10 +2,10 @@ import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 import classNames  from 'classnames';
 
 @Component({
-	tag: 'iiif-explorer-item',
-	styleUrl: 'iiif-explorer-item.scss'
+	tag: 'iiif-gallery-item',
+	styleUrl: 'iiif-gallery-item.scss'
 })
-export class IIIFExplorerItem {
+export class IIIFGalleryItem {
 
     @Prop() item: Manifesto.IIIIFResource;
 
@@ -13,10 +13,10 @@ export class IIIFExplorerItem {
 
 	render() {
 
-        let thumbnail: string = this.item.getThumbnail();
-        const description: string | null = this.item.getDescription();
+        let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
+        //let label: string | null = this.item.getDefaultLabel();
 
-		const figClasses = classNames(
+		const classes = classNames(
 			{ 
 				'collection': this.item.isCollection(),
                 'manifest': this.item.isManifest(),
@@ -25,13 +25,12 @@ export class IIIFExplorerItem {
 		);
 
 		return (
-			
-			<figure class={figClasses}>
-                <img src={thumbnail} />
-				<figcaption>
-                    {description}
-                </figcaption>
-			</figure>
+            <figure onClick={() => this._itemSelectedHandler()} class={classes}>
+                <img src={thumbnail.id} />
+                {/* <figcaption>
+                    {label}
+                </figcaption> */}
+            </figure>
 		)
 	}
 
