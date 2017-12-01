@@ -2,4 +2,4 @@
 
 See [StencilJS docs](https://stenciljs.com/)
 
-Demo: https://edsilv.github.io/iiif-explorer/www/
+Demo: https://edsilv.github.io/iiif-gallery/www/
