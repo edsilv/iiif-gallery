@@ -1,3 +1,5 @@
 # IIIF Gallery
 
-WIP
+See [StencilJS docs](https://stenciljs.com/)
+
+Demo: https://edsilv.github.io/iiif-explorer/www/
