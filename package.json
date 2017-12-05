@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@stencil/core": "next",
-    "manifesto.js": "2.2.1"
+    "manifesto.js": "2.2.2"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
