@@ -80,5 +80,4 @@ export class IIIFGallery {
 			this.onSelectCanvas.emit(item);
 		}
 	}
-
 }
