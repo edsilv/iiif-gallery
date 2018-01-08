@@ -30,7 +30,7 @@ export class IIIFGallery {
 
 			// if it's a collection, list either the child collections or child manifests.
 			if ((manifest as Manifesto.IIIIFResource).isCollection()) {
-				this.items = (manifest as Manifesto.ICollection).members;
+				this.items = (manifest as Manifesto.ICollection).items;
 			} else {
 				// if it's a manifest, list the child canvases.
 				const sequences: Manifesto.ISequence[] = (manifest as Manifesto.IManifest).getSequences();
