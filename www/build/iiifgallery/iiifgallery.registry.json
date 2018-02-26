@@ -3,13 +3,13 @@
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
   "core": "iiifgallery.core.js",
-  "corePolyfilled": "es5-build-disabled.js",
+  "corePolyfilled": "iiifgallery.core.pf.js",
   "components": {
     "iiif-gallery": {
       "$": "iiif-gallery"
     },
     "iiif-gallery-item": {
-      "$": "iiif-gallery-item"
+      "$": "iiif-gallery"
     }
   }
 }
