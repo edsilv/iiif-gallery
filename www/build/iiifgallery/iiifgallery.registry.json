@@ -9,7 +9,7 @@
       "$": "iiif-gallery"
     },
     "iiif-gallery-item": {
-      "$": "iiif-gallery"
+      "$": "iiif-gallery-item"
     }
   }
 }

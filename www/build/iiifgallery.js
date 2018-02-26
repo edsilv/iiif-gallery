@@ -73,4 +73,4 @@ function doesNotSupportsDynamicImports(dynamicImportTest) {
 
 init(win, doc, doc.scripts, appNamespace, urlNamespace, publicPath, discoverPublicPath, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-})(window, document, "iiifgallery","iiifgallery","/build/iiifgallery/",true,"iiifgallery.core.js","es5-build-disabled.js","hydrated",[["iiif-gallery","iiif-gallery",1,[["items",5],["manifest",1,1,2],["reset",6]],0,[["onSelectItem","itemSelected"]]],["iiif-gallery-item","iiif-gallery",1,[["item",1],["selected",1,1,3]]]]);
+})(window, document, "iiifgallery","iiifgallery","/build/iiifgallery/",true,"iiifgallery.core.js","es5-build-disabled.js","hydrated",[["iiif-gallery","iiif-gallery",1,[["items",5],["manifest",1,1,2],["reset",6]],0,[["onSelectItem","itemSelected"]]],["iiif-gallery-item","iiif-gallery-item",1,[["item",1],["selected",1,1,3]]]]);
