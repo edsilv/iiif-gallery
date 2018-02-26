@@ -1,10 +1,8 @@
-/// <reference types="manifesto.js" />
-
 import { Component, Prop, State, Listen, Event, EventEmitter, Method } from '@stencil/core';
 
 @Component({
 	tag: 'iiif-gallery',
-	styleUrl: 'iiif-gallery.scss'
+	styleUrl: 'iiif-gallery.css'
 })
 export class IIIFGallery {
 

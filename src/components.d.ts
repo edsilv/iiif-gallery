@@ -5,12 +5,21 @@
  */
 
 
+declare global {
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+}
+
+
+
 import {
   IIIFGalleryItem as IiifGalleryItem
 } from './components/iiif-gallery-item/iiif-gallery-item';
 
 declare global {
-  interface HTMLIiifGalleryItemElement extends IiifGalleryItem, HTMLElement {
+  interface HTMLIiifGalleryItemElement extends IiifGalleryItem, HTMLStencilElement {
   }
   var HTMLIiifGalleryItemElement: {
     prototype: HTMLIiifGalleryItemElement;
@@ -29,8 +38,8 @@ declare global {
   }
   namespace JSXElements {
     export interface IiifGalleryItemAttributes extends HTMLAttributes {
-      
-        item?: Manifesto.IIIIFResource
+      item?: Manifesto.IManifestResource;
+      selected?: boolean;
     }
   }
 }
@@ -41,7 +50,7 @@ import {
 } from './components/iiif-gallery/iiif-gallery';
 
 declare global {
-  interface HTMLIiifGalleryElement extends IiifGallery, HTMLElement {
+  interface HTMLIiifGalleryElement extends IiifGallery, HTMLStencilElement {
   }
   var HTMLIiifGalleryElement: {
     prototype: HTMLIiifGalleryElement;
@@ -60,9 +69,9 @@ declare global {
   }
   namespace JSXElements {
     export interface IiifGalleryAttributes extends HTMLAttributes {
-      
-        manifest?: string
+      manifest?: string;
     }
   }
 }
 
+declare global { namespace JSX { interface StencilJSX {} } }

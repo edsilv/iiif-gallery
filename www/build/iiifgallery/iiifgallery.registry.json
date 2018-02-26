@@ -1,0 +1,15 @@
+{
+  "namespace": "iiifgallery",
+  "fsNamespace": "iiifgallery",
+  "loader": "../iiifgallery.js",
+  "core": "iiifgallery.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "components": {
+    "iiif-gallery": {
+      "$": "iiif-gallery"
+    },
+    "iiif-gallery-item": {
+      "$": "iiif-gallery"
+    }
+  }
+}

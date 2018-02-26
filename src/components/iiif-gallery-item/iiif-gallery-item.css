@@ -1,0 +1,31 @@
+
+iiif-gallery-item {
+    width: calc(25% - 8px); /* 4 per row with 8px padding */
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+figure {
+    overflow: hidden;
+    margin: 0 15px 20px 15px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /*display: block;*/
+    transition: transform .2s ease-in-out;
+}
+
+figcaption {
+    margin-top: 15px;
+}
+
+/* @media screen and (min-width:50em) {
+     a {
+       width:calc(25% - 6px)
+     }
+ } */
