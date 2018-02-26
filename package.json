@@ -1,6 +1,6 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/iiifgallery.js",
   "types": "dist/types/components.d.ts",
