@@ -9,7 +9,7 @@ Change:
 to:
 
 ```
-"dev": "sd concurrent \"stencil build --dev --prod --watch\" \"stencil-dev-server\" ",
+"dev": "sd concurrent \"stencil build --prod --watch\" \"stencil-dev-server\" ",
 ```
 
 otherwise you get es6 builds.
