@@ -2,14 +2,14 @@
   "namespace": "iiifgallery",
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
-  "core": "iiifgallery.saptiyon.js",
-  "corePolyfilled": "iiifgallery.f3k3eoso.js",
+  "core": "iiifgallery.core.js",
+  "corePolyfilled": "iiifgallery.core.pf.js",
   "components": {
     "iiif-gallery": {
-      "$": "aydip2kd"
+      "$": "iiif-gallery"
     },
     "iiif-gallery-item": {
-      "$": "aydip2kd"
+      "$": "iiif-gallery"
     }
   }
 }

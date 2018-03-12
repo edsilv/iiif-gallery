@@ -6,7 +6,7 @@
         "headers": [
           {
             "name": "Link",
-            "value": "</build/iiifgallery/iiifgallery.saptiyon.js>;rel=preload;as=script"
+            "value": "</build/iiifgallery/iiifgallery.core.js>;rel=preload;as=script"
           }
         ]
       },
