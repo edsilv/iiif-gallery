@@ -3,11 +3,12 @@ import classNames  from 'classnames';
 
 @Component({
 	tag: 'iiif-gallery-item',
-	styleUrl: 'iiif-gallery-item.scss'
+	styleUrl: 'iiif-gallery-item.css'
 })
 export class IIIFGalleryItem {
 
-    @Prop() item: Manifesto.IIIIFResource;
+	@Prop() item: Manifesto.IManifestResource;
+	@Prop() selected: boolean = false;
 
 	@Event() onSelectItem: EventEmitter;
 
@@ -18,9 +19,10 @@ export class IIIFGalleryItem {
 
 		const classes = classNames(
 			{ 
-				'collection': this.item.isCollection(),
+				'collection': (this.item as Manifesto.IIIIFResource).isCollection(),
                 'manifest': this.item.isManifest(),
-                'canvas': this.item.isCanvas()
+				'canvas': this.item.isCanvas(),
+				'selected': this.selected
 			}
 		);
 

@@ -28,7 +28,8 @@ declare global {
 
   namespace StencilComponents {
     interface IiifGalleryItem {
-      'item': Manifesto.IIIIFResource;
+      'item': Manifesto.IManifestResource;
+      'selected': boolean;
     }
   }
 
@@ -51,8 +52,9 @@ declare global {
   }
   namespace JSXElements {
     export interface IiifGalleryItemAttributes extends HTMLAttributes {
-      'item'?: Manifesto.IIIIFResource;
+      'item'?: Manifesto.IManifestResource;
       'onOnSelectItem'?: (event: CustomEvent) => void;
+      'selected'?: boolean;
     }
   }
 }

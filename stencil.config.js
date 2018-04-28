@@ -1,10 +1,15 @@
 exports.config = {
   namespace: 'iiifgallery',
-  generateDistribution: true,
-  bundles: [
-    { components: ['iiif-gallery'] }
+  outputTargets:[
+    { 
+      type: 'dist' 
+    },
+    { 
+      type: 'www',
+      serviceWorker: false
+    }
   ]
-};
+}
 
 exports.devServer = {
   root: 'www',

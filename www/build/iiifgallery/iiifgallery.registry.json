@@ -1,0 +1,16 @@
+{
+  "namespace": "iiifgallery",
+  "fsNamespace": "iiifgallery",
+  "loader": "../iiifgallery.js",
+  "global": "iiifgallery.global.js",
+  "core": "iiifgallery.db3hxl09.js",
+  "corePolyfilled": "iiifgallery.alrbslna.js",
+  "components": {
+    "iiif-gallery": {
+      "$": "kkhk4ojz"
+    },
+    "iiif-gallery-item": {
+      "$": "kkhk4ojz"
+    }
+  }
+}
