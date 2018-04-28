@@ -1,7 +1,14 @@
 exports.config = {
   namespace: 'iiifgallery',
-  generateDistribution: true,
-  serviceWorker: false
+  outputTargets:[
+    { 
+      type: 'dist' 
+    },
+    { 
+      type: 'www',
+      serviceWorker: false
+    }
+  ]
 }
 
 exports.devServer = {
