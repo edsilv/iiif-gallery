@@ -4,65 +4,94 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-
-import {
-  IIIFGalleryItem as IiifGalleryItem
-} from './components/iiif-gallery-item/iiif-gallery-item';
+import '@stencil/core';
 
 declare global {
-  interface HTMLIiifGalleryItemElement extends IiifGalleryItem, HTMLElement {
+  namespace JSX {
+    interface Element {}
+    export interface IntrinsicElements {}
   }
+  namespace JSXElements {}
+
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
+  }
+
+  interface HTMLAttributes {}
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface IiifGalleryItem {
+      'item': Manifesto.IIIIFResource;
+    }
+  }
+
+  interface HTMLIiifGalleryItemElement extends StencilComponents.IiifGalleryItem, HTMLStencilElement {}
+
   var HTMLIiifGalleryItemElement: {
     prototype: HTMLIiifGalleryItemElement;
     new (): HTMLIiifGalleryItemElement;
   };
   interface HTMLElementTagNameMap {
-    "iiif-gallery-item": HTMLIiifGalleryItemElement;
+    'iiif-gallery-item': HTMLIiifGalleryItemElement;
   }
   interface ElementTagNameMap {
-    "iiif-gallery-item": HTMLIiifGalleryItemElement;
+    'iiif-gallery-item': HTMLIiifGalleryItemElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "iiif-gallery-item": JSXElements.IiifGalleryItemAttributes;
+      'iiif-gallery-item': JSXElements.IiifGalleryItemAttributes;
     }
   }
   namespace JSXElements {
     export interface IiifGalleryItemAttributes extends HTMLAttributes {
-      
-        item?: Manifesto.IIIIFResource
+      'item'?: Manifesto.IIIIFResource;
+      'onOnSelectItem'?: (event: CustomEvent) => void;
     }
   }
 }
 
 
-import {
-  IIIFGallery as IiifGallery
-} from './components/iiif-gallery/iiif-gallery';
-
 declare global {
-  interface HTMLIiifGalleryElement extends IiifGallery, HTMLElement {
+
+  namespace StencilComponents {
+    interface IiifGallery {
+      'manifest': string;
+      'reset': () => void;
+    }
   }
+
+  interface HTMLIiifGalleryElement extends StencilComponents.IiifGallery, HTMLStencilElement {}
+
   var HTMLIiifGalleryElement: {
     prototype: HTMLIiifGalleryElement;
     new (): HTMLIiifGalleryElement;
   };
   interface HTMLElementTagNameMap {
-    "iiif-gallery": HTMLIiifGalleryElement;
+    'iiif-gallery': HTMLIiifGalleryElement;
   }
   interface ElementTagNameMap {
-    "iiif-gallery": HTMLIiifGalleryElement;
+    'iiif-gallery': HTMLIiifGalleryElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "iiif-gallery": JSXElements.IiifGalleryAttributes;
+      'iiif-gallery': JSXElements.IiifGalleryAttributes;
     }
   }
   namespace JSXElements {
     export interface IiifGalleryAttributes extends HTMLAttributes {
-      
-        manifest?: string
+      'manifest'?: string;
+      'onOnSelectCanvas'?: (event: CustomEvent) => void;
+      'onOnSelectCollection'?: (event: CustomEvent) => void;
+      'onOnSelectManifest'?: (event: CustomEvent) => void;
     }
   }
 }
 
+declare global { namespace JSX { interface StencilJSX {} } }
