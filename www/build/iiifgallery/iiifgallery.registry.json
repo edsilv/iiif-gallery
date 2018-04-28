@@ -2,6 +2,7 @@
   "namespace": "iiifgallery",
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
+  "global": "iiifgallery.global.js",
   "core": "iiifgallery.core.js",
   "corePolyfilled": "iiifgallery.core.pf.js",
   "components": {
