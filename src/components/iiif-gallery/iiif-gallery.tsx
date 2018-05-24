@@ -38,10 +38,12 @@ export class IIIFGallery {
 				} else {
 					// if it's a manifest, list the child canvases.
 					const sequences: Manifesto.ISequence[] = (manifest as Manifesto.IManifest).getSequences();
-	
+
 					if (sequences.length) {
 						const sequence: Manifesto.ISequence = sequences[0];
 						this.items = sequence.getCanvases();
+
+						console.log(this.items);
 					}
 				}
 	
