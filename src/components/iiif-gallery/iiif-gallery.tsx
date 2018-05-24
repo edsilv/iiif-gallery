@@ -50,6 +50,8 @@ export class IIIFGallery {
 				console.error('failed to load manifest');
 			});
 			
+		} else {
+			this.items = null;
 		}
 
 	}
@@ -62,7 +64,7 @@ export class IIIFGallery {
 	render() {
 
 		if (!this.items) {
-			return (<span>loading...</span>)
+			return (<span></span>)
 		} else {
 
 			return ( 
