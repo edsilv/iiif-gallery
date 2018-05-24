@@ -1,4 +1,4 @@
-import { Component, Prop, State, Listen, Event, EventEmitter, Method } from '@stencil/core';
+import { Component, Prop, State, Listen, Event, EventEmitter, Method, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'iiif-gallery',
@@ -11,6 +11,10 @@ export class IIIFGallery {
 	@State() items: Manifesto.IManifestResource[] = null;
 
 	@Prop() manifest: string;
+	@Watch('manifest')
+	watchHandler() {
+		this._reset();
+	}
 
 	@Event() onSelectManifest: EventEmitter;
 	@Event() onSelectCollection: EventEmitter;
