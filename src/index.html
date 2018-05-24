@@ -11,29 +11,42 @@
 
 <body>
 
+	<input type="text" name="manifest" id="manifest"><button id="setmanifest">Set Manifest</button>
+
 	<script>
+
+		var manifest = '/collection/index.json';
 
 		window.addEventListener('DOMContentLoaded', () => {
 
-			const iiifGallery = document.querySelector('iiif-gallery');
+			var manifestInput = document.getElementById('manifest'); 
+            var setManifest = document.getElementById('setmanifest');
+			var gallery = document.querySelector('iiif-gallery');
 
-			iiifGallery.addEventListener('onSelectManifest', function (evt) {
+			setManifest.addEventListener('click', function() {
+                manifest = manifestInput.value;
+                gallery.manifest = manifest;
+            });
+
+			gallery.addEventListener('onSelectManifest', function (evt) {
 				console.log('select manifest:', evt.detail.id);
 			});
 
-			iiifGallery.addEventListener('onSelectCollection', function (evt) {
+			gallery.addEventListener('onSelectCollection', function (evt) {
 				console.log('select collection:', evt.detail.id);
 			});
 
-			iiifGallery.addEventListener('onSelectCanvas', function (evt) {
+			gallery.addEventListener('onSelectCanvas', function (evt) {
 				console.log('select canvas:', evt.detail.id);
 			});
 
-			const resetBtn = document.getElementById('reset');
+			var resetBtn = document.getElementById('reset');
 
 			resetBtn.onclick = () => {
-				iiifGallery.reset();
+				gallery.reset();
 			}
+
+			manifestInput.value = manifest;
 		});
 	</script>
 
