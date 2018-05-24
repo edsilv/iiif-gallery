@@ -3,14 +3,14 @@
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
   "global": "iiifgallery.global.js",
-  "core": "iiifgallery.core.js",
-  "corePolyfilled": "iiifgallery.core.pf.js",
+  "core": "iiifgallery.uyh01chz.js",
+  "corePolyfilled": "iiifgallery.gxlbzhrk.js",
   "components": {
     "iiif-gallery": {
-      "$": "iiif-gallery"
+      "$": "dl2hmoii"
     },
     "iiif-gallery-item": {
-      "$": "iiif-gallery"
+      "$": "dl2hmoii"
     }
   }
 }
