@@ -14,8 +14,6 @@ export class IIIFGalleryItem {
 
 	render() {
 
-		console.log(this.item);
-
         let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
         //let label: string | null = this.item.getDefaultLabel();
 

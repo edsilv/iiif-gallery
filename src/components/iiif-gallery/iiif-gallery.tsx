@@ -42,8 +42,6 @@ export class IIIFGallery {
 					if (sequences.length) {
 						const sequence: Manifesto.ISequence = sequences[0];
 						this.items = sequence.getCanvases();
-
-						console.log(this.items);
 					}
 				}
 	
