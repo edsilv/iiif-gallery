@@ -5,6 +5,7 @@ See [StencilJS docs](https://stenciljs.com/)
 ```html
 <html>
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
     <script src="https://unpkg.com/manifesto.js/dist/client/manifesto.bundle.js"></script>
     <script src="https://unpkg.com/iiif-gallery/dist/iiifgallery.js"></script>
 </head>
