@@ -22,17 +22,24 @@ export class IIIFGalleryItem {
 				'collection': (this.item as Manifesto.IIIIFResource).isCollection(),
                 'manifest': this.item.isManifest(),
 				'canvas': this.item.isCanvas(),
-				'selected': this.selected
+				'selected': this.selected,
+				'aspect-ratio': true,
+				'aspect-ratio--1x1': true
 			}
 		);
 
 		return (
-            <figure onClick={() => this._itemSelectedHandler()} class={classes}>
-                <img src={thumbnail.id} />
-                {/* <figcaption>
-                    {label}
-                </figcaption> */}
-            </figure>
+			<article class="fl w-100 w-50-m  w-25-ns pa2-ns">
+				<div onClick={() => this._itemSelectedHandler()} class={classes}>
+					<img src={thumbnail.id} class="db bg-center cover aspect-ratio--object" />
+				</div>
+				{/*
+				<a href="#0" class="ph2 ph0-ns pb3 link db">
+					<h3 class="f5 f4-ns mb0 black-90">Heading</h3>
+					<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>
+				</a>
+				*/}
+			</article>
 		)
 	}
 

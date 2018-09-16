@@ -28,6 +28,8 @@ export class IIIFGallery {
 
 		if (this.manifest) {
 
+			console.log();
+
 			manifesto.loadManifest(this.manifest).then((data) => {
 			
 				const manifest: Manifesto.IManifestResource = manifesto.create(data);
@@ -68,9 +70,12 @@ export class IIIFGallery {
 		} else {
 
 			return ( 
-				this.items.map((item) => 
-					<iiif-gallery-item item={item} selected={this._selectedItem === item}></iiif-gallery-item>
-				)
+				<section class="cf w-100 pa2-ns">{
+					this.items.map((item) => 
+						<iiif-gallery-item item={item} selected={this._selectedItem === item}></iiif-gallery-item>
+					)
+				}
+				</section>
 			)
 		}
 	}
