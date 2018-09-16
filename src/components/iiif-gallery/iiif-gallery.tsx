@@ -70,7 +70,7 @@ export class IIIFGallery {
 		} else {
 
 			return ( 
-				<section class="cf w-100 pa2-ns">{
+				<section class="cf w-100 pa2">{
 					this.items.map((item) => 
 						<iiif-gallery-item item={item} selected={this._selectedItem === item}></iiif-gallery-item>
 					)

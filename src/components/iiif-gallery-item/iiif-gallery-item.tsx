@@ -29,7 +29,7 @@ export class IIIFGalleryItem {
 		);
 
 		return (
-			<article class="fl w-100 w-50-m  w-25-ns pa2-ns">
+			<article class="fl w-100 w-50-m  w-25-ns pa2">
 				<div onClick={() => this._itemSelectedHandler()} class={classes}>
 					<img src={thumbnail.id} class="db bg-center cover aspect-ratio--object" />
 				</div>
