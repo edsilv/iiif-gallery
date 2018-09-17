@@ -12,10 +12,22 @@ export class IIIFGalleryItem {
 
 	@Event() onSelectItem: EventEmitter;
 
+
+	renderLabel() {
+
+		let label: string | null = (this.item as Manifesto.IIIIFResource).getDefaultLabel();
+
+		if (label) {
+			return  <div class="ph2 ph0-ns pb3 link">
+						<h3 class="f5 f4-ns mb0 black-90">{label}</h3>
+						{/*<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>*/}
+				    </div>
+		}
+	}
+
 	render() {
 
         let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
-        //let label: string | null = this.item.getDefaultLabel();
 
 		const classes = classNames(
 			{ 
@@ -29,17 +41,14 @@ export class IIIFGalleryItem {
 		);
 
 		return (
-			<article class="fl w-100 w-50-m  w-25-ns pa2">
-				<div onClick={() => this._itemSelectedHandler()} class={classes}>
+			<div onClick={() => this._itemSelectedHandler()} class="fl w-100 w-50-m  w-25-ns pa2">
+				<div class={classes}>
 					<img src={thumbnail.id} class="db bg-center cover aspect-ratio--object" />
 				</div>
-				{/*
-				<a href="#0" class="ph2 ph0-ns pb3 link db">
-					<h3 class="f5 f4-ns mb0 black-90">Heading</h3>
-					<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>
-				</a>
-				*/}
-			</article>
+				{
+					this.renderLabel()
+				}				
+			</div>
 		)
 	}
 
