@@ -28,10 +28,8 @@ export class IIIFGallery {
 
 		if (this.manifest) {
 
-			console.log();
-
 			manifesto.loadManifest(this.manifest).then((data) => {
-			
+
 				const manifest: Manifesto.IManifestResource = manifesto.create(data);
 	
 				// if it's a collection, list either the child collections or child manifests.

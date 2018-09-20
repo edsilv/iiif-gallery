@@ -15,13 +15,13 @@ export class IIIFGalleryItem {
 
 	renderLabel() {
 
-		let label: string | null = (this.item as Manifesto.IIIIFResource).getDefaultLabel();
+		let label: string | null = this.item.getDefaultLabel();
 
 		if (label) {
-			return  <div class="ph2 ph0-ns pb3 link">
+			return  (<div class="ph2 ph0-ns pb3 link">
 						<h3 class="f5 f4-ns mb0 black-90">{label}</h3>
 						{/*<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>*/}
-				    </div>
+				    </div>)
 		}
 	}
 
