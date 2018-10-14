@@ -12,7 +12,13 @@ export class IIIFGallery {
 
 	@Prop() manifest: string;
 	@Watch('manifest')
-	watchHandler() {
+	manifestHandler() {
+		this._reset();
+	}
+
+	@Prop() ignore: string;
+	@Watch('ignore')
+	ignoreHandler() {
 		this._reset();
 	}
 
@@ -44,16 +50,21 @@ export class IIIFGallery {
 						this.items = sequence.getCanvases();
 					}
 				}
+
+				if (this.ignore) {
+					// remove any whitespace in ignore csv
+					const ignore: string[] = this.ignore.split(',').map((item: string) => item.trim());
+					this.items = this.items.filter(resource => ignore.indexOf(resource.id) === -1);
+				}				
 	
 			}).catch(function(e) {
 				console.error(e);
 				console.error('failed to load manifest');
 			});
-			
+
 		} else {
 			this.items = null;
 		}
-
 	}
 
 	@Method()

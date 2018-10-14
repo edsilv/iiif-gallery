@@ -64,6 +64,7 @@ declare global {
 
   namespace StencilComponents {
     interface IiifGallery {
+      'ignore': string;
       'manifest': string;
       'reset': () => void;
     }
@@ -88,6 +89,7 @@ declare global {
   }
   namespace JSXElements {
     export interface IiifGalleryAttributes extends HTMLAttributes {
+      'ignore'?: string;
       'manifest'?: string;
       'onOnSelectCanvas'?: (event: CustomEvent) => void;
       'onOnSelectCollection'?: (event: CustomEvent) => void;

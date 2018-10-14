@@ -12,7 +12,6 @@ export class IIIFGalleryItem {
 
 	@Event() onSelectItem: EventEmitter;
 
-
 	renderLabel() {
 
 		let label: string | null = this.item.getDefaultLabel();
