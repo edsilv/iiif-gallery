@@ -2,15 +2,18 @@
   "namespace": "iiifgallery",
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
-  "global": "iiifgallery.global.js",
-  "core": "iiifgallery.uyh01chz.js",
-  "corePolyfilled": "iiifgallery.gxlbzhrk.js",
+  "core": "iiifgallery.twlevvjw.js",
+  "corePolyfilled": "iiifgallery.5z06sex6.js",
   "components": {
     "iiif-gallery": {
-      "$": "wamce4gm"
+      "bundleIds": {
+        "$": "cw21j9fn"
+      }
     },
     "iiif-gallery-item": {
-      "$": "wamce4gm"
+      "bundleIds": {
+        "$": "cw21j9fn"
+      }
     }
   }
 }

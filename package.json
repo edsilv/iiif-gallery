@@ -2,6 +2,7 @@
   "name": "iiif-gallery",
   "version": "0.0.23",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
+  "module": "dist/esm/iiifgallery.js",
   "main": "dist/iiifgallery.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -11,19 +12,15 @@
   "browser": "dist/iiifgallery.js",
   "scripts": {
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --prod --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@stencil/core": "^0.7.27-4",
+    "@stencil/core": "~0.13.2",
     "manifesto.js": "3.0.6"
   },
   "devDependencies": {
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
     "@types/jest": "^21.1.1",
     "classnames": "^2.2.5",
     "jest": "^21.2.1"
