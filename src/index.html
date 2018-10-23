@@ -20,7 +20,7 @@
 		//var manifest = 'https://sophiedixon.github.io/3d-portfolio/collection/ecorche/index.json';
 		var manifest = 'https://nomad-project.co.uk/objects/collection/index.json';
 
-		window.addEventListener('DOMContentLoaded', () => {
+		window.addEventListener('DOMContentLoaded', function() {
 
 			var manifestInput = document.getElementById('manifest'); 
             var setManifest = document.getElementById('setmanifest');
@@ -45,7 +45,7 @@
 
 			var resetBtn = document.getElementById('reset');
 
-			resetBtn.onclick = () => {
+			resetBtn.onclick = function() {
 				gallery.reset();
 			}
 
@@ -59,7 +59,7 @@
 		https://docuver.se/uv-app-starter/collection/vague-21/index.json
 	-->
 
-	<iiif-gallery></iiif-gallery>
+	<iiif-gallery ignore="https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json"></iiif-gallery>
 
 	<p>
 		<button id="reset">Reset</button>

@@ -3,7 +3,7 @@
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
   "global": "iiifgallery.global.js",
-  "core": "iiifgallery.uyh01chz.js",
+  "core": "iiifgallery.udwqux00.js",
   "corePolyfilled": "iiifgallery.gxlbzhrk.js",
   "components": {
     "iiif-gallery": {
