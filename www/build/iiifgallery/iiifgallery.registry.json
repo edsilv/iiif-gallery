@@ -3,14 +3,14 @@
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
   "global": "iiifgallery.global.js",
-  "core": "iiifgallery.udwqux00.js",
   "corePolyfilled": "iiifgallery.gxlbzhrk.js",
+  "core": "iiifgallery.udwqux00.js",
   "components": {
     "iiif-gallery": {
-      "$": "wamce4gm"
+      "$": "uzt1unnn"
     },
     "iiif-gallery-item": {
-      "$": "wamce4gm"
+      "$": "uzt1unnn"
     }
   }
 }
