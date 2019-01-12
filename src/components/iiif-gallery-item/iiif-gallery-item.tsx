@@ -17,21 +17,23 @@ export class IIIFGalleryItem {
 		let label: string | null = this.item.getDefaultLabel();
 
 		if (label) {
-			return  (<div class="ph2 ph0-ns pb3 link">
-						<h3 class="f5 f4-ns mb0 black-90">{label}</h3>
-						{/*<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>*/}
-				    </div>)
+			return  (
+        <div class="ph2 ph0-ns pb3 link">
+					<h3 class="f5 f4-ns mb0 black-90">{label}</h3>
+					{/*<h3 class="f6 f5 fw4 mt2 black-60">Sub-heading</h3>*/}
+        </div>
+      )
 		}
 	}
 
 	render() {
 
-        let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
+    let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
 
 		const classes = classNames(
-			{ 
+			{
 				'collection': (this.item as Manifesto.IIIIFResource).isCollection(),
-                'manifest': this.item.isManifest(),
+        'manifest': this.item.isManifest(),
 				'canvas': this.item.isCanvas(),
 				'selected': this.selected,
 				'aspect-ratio': true,
@@ -46,7 +48,7 @@ export class IIIFGalleryItem {
 				</div>
 				{
 					this.renderLabel()
-				}				
+				}
 			</div>
 		)
 	}
