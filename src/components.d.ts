@@ -23,12 +23,15 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import {
+  ManifestResource,
+} from 'manifesto.js';
 
 declare global {
 
   namespace StencilComponents {
     interface IiifGalleryItem {
-      'item': Manifesto.IManifestResource;
+      'item': ManifestResource;
       'selected': boolean;
     }
   }
@@ -52,7 +55,7 @@ declare global {
   }
   namespace JSXElements {
     export interface IiifGalleryItemAttributes extends HTMLAttributes {
-      'item'?: Manifesto.IManifestResource;
+      'item'?: ManifestResource;
       'onOnSelectItem'?: (event: CustomEvent) => void;
       'selected'?: boolean;
     }

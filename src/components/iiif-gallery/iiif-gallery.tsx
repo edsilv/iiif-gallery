@@ -1,4 +1,5 @@
 import { Component, Prop, State, Listen, Event, EventEmitter, Method, Watch } from '@stencil/core';
+import { ManifestResource, IIIFResource, Collection, Sequence, Manifest } from 'manifesto.js';
 
 @Component({
 	tag: 'iiif-gallery',
@@ -6,9 +7,9 @@ import { Component, Prop, State, Listen, Event, EventEmitter, Method, Watch } fr
 })
 export class IIIFGallery {
 
-	private _selectedItem: Manifesto.IManifestResource | null;
+	private _selectedItem: ManifestResource | null;
 
-	@State() items: Manifesto.IManifestResource[] = null;
+	@State() items: ManifestResource[] = null;
 
 	@Prop() manifest: string;
 	@Watch('manifest')
@@ -36,17 +37,17 @@ export class IIIFGallery {
 
 			manifesto.loadManifest(this.manifest).then((data) => {
 
-				const manifest: Manifesto.IManifestResource = manifesto.create(data);
+				const manifest: ManifestResource = manifesto.parseManifest(data);
 
 				// if it's a collection, list either the child collections or child manifests.
-				if ((manifest as Manifesto.IIIIFResource).isCollection()) {
-					this.items = (manifest as Manifesto.ICollection).items;
+				if ((manifest as IIIFResource).isCollection()) {
+					this.items = (manifest as Collection).items;
 				} else {
 					// if it's a manifest, list the child canvases.
-					const sequences: Manifesto.ISequence[] = (manifest as Manifesto.IManifest).getSequences();
+					const sequences: Sequence[] = (manifest as Manifest).getSequences();
 
 					if (sequences.length) {
-						const sequence: Manifesto.ISequence = sequences[0];
+						const sequence: Sequence = sequences[0];
 						this.items = sequence.getCanvases();
 					}
 				}
@@ -92,7 +93,7 @@ export class IIIFGallery {
 	@Listen('onSelectItem')
 	itemSelected(event: CustomEvent) {
 
-		const item: Manifesto.IIIIFResource = event.detail;
+		const item: IIIFResource = event.detail;
 		this._selectedItem = item;
 
 		if (item.isCollection()) {

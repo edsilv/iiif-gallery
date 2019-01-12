@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@stencil/core": "^0.7.27-4",
-    "manifesto.js": "3.0.6"
+    "manifesto.js": "3.0.9-pre.1"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",

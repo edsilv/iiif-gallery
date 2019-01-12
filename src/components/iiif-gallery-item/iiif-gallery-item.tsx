@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 import classNames  from 'classnames';
+import { ManifestResource, Thumbnail, IIIFResource } from 'manifesto.js';
 
 @Component({
 	tag: 'iiif-gallery-item',
@@ -7,7 +8,7 @@ import classNames  from 'classnames';
 })
 export class IIIFGalleryItem {
 
-	@Prop() item: Manifesto.IManifestResource;
+	@Prop() item: ManifestResource;
 	@Prop() selected: boolean = false;
 
 	@Event() onSelectItem: EventEmitter;
@@ -28,11 +29,11 @@ export class IIIFGalleryItem {
 
 	render() {
 
-    let thumbnail: Manifesto.IThumbnail = this.item.getThumbnail();
+    let thumbnail: Thumbnail = this.item.getThumbnail();
 
 		const classes = classNames(
 			{
-				'collection': (this.item as Manifesto.IIIIFResource).isCollection(),
+				'collection': (this.item as IIIFResource).isCollection(),
         'manifest': this.item.isManifest(),
 				'canvas': this.item.isCanvas(),
 				'selected': this.selected,
