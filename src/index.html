@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
 	<title>IIIF Gallery Component</title>
 	<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-	<script src="https://unpkg.com/manifesto.js/dist/client/manifesto.bundle.js"></script>
+	<script src="https://unpkg.com/manifesto.js@3.0.6/dist/client/manifesto.bundle.js"></script>
 	<script src="build/iiifgallery.js"></script>
 </head>
 
@@ -19,11 +19,11 @@
 		//var manifest = 'https://edsilv.github.io/biiif-workshop/collection/index.json';
 		//var manifest = 'https://sophiedixon.github.io/3d-portfolio/collection/ecorche/index.json';
 		//var manifest = 'https://nomad-project.co.uk/objects/collection/index.json';
-		var manifest = 'https://nomadproject.netlify.com/collection/index.json';
+		var manifest = 'https://nomad-project-preview.netlify.com/collection/index.json';
 
 		window.addEventListener('DOMContentLoaded', function() {
 
-			var manifestInput = document.getElementById('manifest'); 
+			var manifestInput = document.getElementById('manifest');
             var setManifest = document.getElementById('setmanifest');
 			var gallery = document.querySelector('iiif-gallery');
 

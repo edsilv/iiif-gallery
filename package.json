@@ -1,6 +1,6 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/iiifgallery.js",
   "types": "dist/types/components.d.ts",
@@ -10,23 +10,24 @@
   ],
   "browser": "dist/iiifgallery.js",
   "scripts": {
-    "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --prod --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "dependencies": {
-    "@stencil/core": "^0.7.27-4",
-    "manifesto.js": "3.0.6"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/jest": "^21.1.1",
+    "@stencil/core": "0.18.0",
+    "@types/jest": "24.0.6",
+    "@types/puppeteer": "1.12.1",
+    "@types/redux": "3.6.0",
+    "@types/three": "0.93.22",
+    "copyfiles": "2.1.0",
+    "jest": "24.1.0",
+    "jest-cli": "24.1.0",
+    "puppeteer": "1.12.2",
     "classnames": "^2.2.5",
-    "jest": "^21.2.1"
+    "manifesto.js": "3.0.6"
   },
   "repository": {
     "type": "git",
@@ -38,19 +39,6 @@
     "url": "https://github.com/edsilv/iiif-gallery"
   },
   "homepage": "https://github.com/edsilv/iiif-gallery",
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  },
   "keywords": [
     "iiif",
     "gallery",

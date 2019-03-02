@@ -2,15 +2,18 @@
   "namespace": "iiifgallery",
   "fsNamespace": "iiifgallery",
   "loader": "../iiifgallery.js",
-  "global": "iiifgallery.global.js",
-  "corePolyfilled": "iiifgallery.gxlbzhrk.js",
-  "core": "iiifgallery.udwqux00.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "core": "iiifgallery.core.js",
   "components": {
     "iiif-gallery": {
-      "$": "uzt1unnn"
+      "bundleIds": {
+        "$": "iiif-gallery"
+      }
     },
     "iiif-gallery-item": {
-      "$": "uzt1unnn"
+      "bundleIds": {
+        "$": "iiif-gallery"
+      }
     }
   }
 }
