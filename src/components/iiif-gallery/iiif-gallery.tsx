@@ -22,9 +22,9 @@ export class IIIFGallery {
 		this._reset();
 	}
 
-	@Event() onSelectManifest: EventEmitter;
-	@Event() onSelectCollection: EventEmitter;
-	@Event() onSelectCanvas: EventEmitter;
+	@Event() selectManifest: EventEmitter;
+	@Event() selectCollection: EventEmitter;
+	@Event() selectCanvas: EventEmitter;
 
 	componentWillLoad() {
 		this._reset();
@@ -89,18 +89,18 @@ export class IIIFGallery {
 		}
 	}
 
-	@Listen('onSelectItem')
+	@Listen('selectItem')
 	itemSelected(event: CustomEvent) {
 
 		const item: Manifesto.IIIIFResource = event.detail;
 		this._selectedItem = item;
 
 		if (item.isCollection()) {
-			this.onSelectCollection.emit(item);
+			this.selectCollection.emit(item);
 		} else if (item.isManifest()) {
-			this.onSelectManifest.emit(item);
+			this.selectManifest.emit(item);
 		} else {
-			this.onSelectCanvas.emit(item);
+			this.selectCanvas.emit(item);
 		}
 	}
 }

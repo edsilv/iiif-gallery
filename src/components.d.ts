@@ -18,7 +18,7 @@ export namespace Components {
   }
   interface IiifGalleryItemAttributes extends StencilHTMLAttributes {
     'item'?: Manifesto.IManifestResource;
-    'onOnSelectItem'?: (event: CustomEvent) => void;
+    'onSelectItem'?: (event: CustomEvent) => void;
     'selected'?: boolean;
   }
 
@@ -30,9 +30,9 @@ export namespace Components {
   interface IiifGalleryAttributes extends StencilHTMLAttributes {
     'ignore'?: string;
     'manifest'?: string;
-    'onOnSelectCanvas'?: (event: CustomEvent) => void;
-    'onOnSelectCollection'?: (event: CustomEvent) => void;
-    'onOnSelectManifest'?: (event: CustomEvent) => void;
+    'onSelectCanvas'?: (event: CustomEvent) => void;
+    'onSelectCollection'?: (event: CustomEvent) => void;
+    'onSelectManifest'?: (event: CustomEvent) => void;
   }
 }
 

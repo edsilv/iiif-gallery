@@ -32,15 +32,15 @@
                 gallery.manifest = manifest;
             });
 
-			gallery.addEventListener('onSelectManifest', function (evt) {
+			gallery.addEventListener('selectManifest', function (evt) {
 				console.log('select manifest:', evt.detail.id);
 			});
 
-			gallery.addEventListener('onSelectCollection', function (evt) {
+			gallery.addEventListener('selectCollection', function (evt) {
 				console.log('select collection:', evt.detail.id);
 			});
 
-			gallery.addEventListener('onSelectCanvas', function (evt) {
+			gallery.addEventListener('selectCanvas', function (evt) {
 				console.log('select canvas:', evt.detail.id);
 			});
 
