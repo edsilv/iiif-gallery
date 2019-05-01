@@ -1,6 +1,6 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/iiifgallery.js",
   "types": "dist/types/components.d.ts",
@@ -13,7 +13,8 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {

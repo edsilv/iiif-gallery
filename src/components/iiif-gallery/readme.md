@@ -15,11 +15,11 @@
 
 ## Events
 
-| Event                | Description | Type                |
-| -------------------- | ----------- | ------------------- |
-| `onSelectCanvas`     |             | `CustomEvent<void>` |
-| `onSelectCollection` |             | `CustomEvent<void>` |
-| `onSelectManifest`   |             | `CustomEvent<void>` |
+| Event              | Description | Type                |
+| ------------------ | ----------- | ------------------- |
+| `selectCanvas`     |             | `CustomEvent<void>` |
+| `selectCollection` |             | `CustomEvent<void>` |
+| `selectManifest`   |             | `CustomEvent<void>` |
 
 
 ## Methods

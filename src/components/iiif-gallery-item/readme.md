@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event          | Description | Type                |
-| -------------- | ----------- | ------------------- |
-| `onSelectItem` |             | `CustomEvent<void>` |
+| Event        | Description | Type                |
+| ------------ | ----------- | ------------------- |
+| `selectItem` |             | `CustomEvent<void>` |
 
 
 ----------------------------------------------
