@@ -73,11 +73,7 @@ export class IIIFGallery {
 	}
 
 	render() {
-
-		if (!this.items) {
-			return (<span></span>)
-		} else {
-
+		if (this.items) {
 			return (
 				<section class="cf w-100 pa2">{
 					this.items.map((item) =>
@@ -86,7 +82,9 @@ export class IIIFGallery {
 				}
 				</section>
 			)
-		}
+		} else {
+      return null;
+    }
 	}
 
 	@Listen('selectItem')
