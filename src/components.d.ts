@@ -5,54 +5,23 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-
+  interface IiifGallery {
+    'ignore': string;
+    'manifest': string;
+    'reset': () => Promise<void>;
+  }
   interface IiifGalleryItem {
     'item': Manifesto.IManifestResource;
     'selected': boolean;
   }
-  interface IiifGalleryItemAttributes extends StencilHTMLAttributes {
-    'item'?: Manifesto.IManifestResource;
-    'onSelectItem'?: (event: CustomEvent) => void;
-    'selected'?: boolean;
-  }
-
-  interface IiifGallery {
-    'ignore': string;
-    'manifest': string;
-    'reset': () => void;
-  }
-  interface IiifGalleryAttributes extends StencilHTMLAttributes {
-    'ignore'?: string;
-    'manifest'?: string;
-    'onSelectCanvas'?: (event: CustomEvent) => void;
-    'onSelectCollection'?: (event: CustomEvent) => void;
-    'onSelectManifest'?: (event: CustomEvent) => void;
-  }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'IiifGalleryItem': Components.IiifGalleryItem;
-    'IiifGallery': Components.IiifGallery;
-  }
 
-  interface StencilIntrinsicElements {
-    'iiif-gallery-item': Components.IiifGalleryItemAttributes;
-    'iiif-gallery': Components.IiifGalleryAttributes;
-  }
-
-
-  interface HTMLIiifGalleryItemElement extends Components.IiifGalleryItem, HTMLStencilElement {}
-  var HTMLIiifGalleryItemElement: {
-    prototype: HTMLIiifGalleryItemElement;
-    new (): HTMLIiifGalleryItemElement;
-  };
 
   interface HTMLIiifGalleryElement extends Components.IiifGallery, HTMLStencilElement {}
   var HTMLIiifGalleryElement: {
@@ -60,23 +29,44 @@ declare global {
     new (): HTMLIiifGalleryElement;
   };
 
+  interface HTMLIiifGalleryItemElement extends Components.IiifGalleryItem, HTMLStencilElement {}
+  var HTMLIiifGalleryItemElement: {
+    prototype: HTMLIiifGalleryItemElement;
+    new (): HTMLIiifGalleryItemElement;
+  };
   interface HTMLElementTagNameMap {
-    'iiif-gallery-item': HTMLIiifGalleryItemElement
-    'iiif-gallery': HTMLIiifGalleryElement
-  }
-
-  interface ElementTagNameMap {
-    'iiif-gallery-item': HTMLIiifGalleryItemElement;
     'iiif-gallery': HTMLIiifGalleryElement;
+    'iiif-gallery-item': HTMLIiifGalleryItemElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface IiifGallery extends JSXBase.HTMLAttributes<HTMLIiifGalleryElement> {
+    'ignore'?: string;
+    'manifest'?: string;
+    'onSelectCanvas'?: (event: CustomEvent<any>) => void;
+    'onSelectCollection'?: (event: CustomEvent<any>) => void;
+    'onSelectManifest'?: (event: CustomEvent<any>) => void;
+  }
+  interface IiifGalleryItem extends JSXBase.HTMLAttributes<HTMLIiifGalleryItemElement> {
+    'item'?: Manifesto.IManifestResource;
+    'onSelectItem'?: (event: CustomEvent<any>) => void;
+    'selected'?: boolean;
+  }
+
+  interface IntrinsicElements {
+    'iiif-gallery': IiifGallery;
+    'iiif-gallery-item': IiifGalleryItem;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

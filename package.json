@@ -1,34 +1,38 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
-  "main": "dist/iiifgallery.js",
-  "types": "dist/types/components.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/remixer/remixer.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "browser": "dist/iiifgallery.js",
   "scripts": {
+    "lint:all": "prettier --write \"./src/**/*.{js,jsx,json,css,ts,tsx}\" \"!./src/assets/* \"",
+    "build:dev": "npm run lint:all && stencil build --dev",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
+    "netlify": "netlify deploy --dir=www --prod",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "0.18.0",
-    "@types/jest": "24.0.6",
-    "@types/puppeteer": "1.12.1",
-    "@types/redux": "3.6.0",
-    "@types/three": "0.93.22",
-    "copyfiles": "2.1.0",
-    "jest": "24.1.0",
-    "jest-cli": "24.1.0",
-    "puppeteer": "1.12.2",
+    "@stencil/core": "1.0.7",
     "classnames": "^2.2.5",
-    "manifesto.js": "3.0.6"
+    "manifesto.js": "3.0.6",
+    "prettier": "^1.18.2",
+    "prettier-check": "^2.0.0",
+    "tslint": "^5.17.0"
   },
   "repository": {
     "type": "git",
