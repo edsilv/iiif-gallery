@@ -15,25 +15,38 @@
 
 ## Events
 
-| Event              | Description | Type                |
-| ------------------ | ----------- | ------------------- |
-| `selectCanvas`     |             | `CustomEvent<void>` |
-| `selectCollection` |             | `CustomEvent<void>` |
-| `selectManifest`   |             | `CustomEvent<void>` |
+| Event              | Description | Type               |
+| ------------------ | ----------- | ------------------ |
+| `selectCanvas`     |             | `CustomEvent<any>` |
+| `selectCollection` |             | `CustomEvent<any>` |
+| `selectManifest`   |             | `CustomEvent<any>` |
 
 
 ## Methods
 
-### `reset() => void`
+### `reset() => Promise<void>`
 
 
 
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- [iiif-gallery-item](..\iiif-gallery-item)
+
+### Graph
+```mermaid
+graph TD;
+  iiif-gallery --> iiif-gallery-item
+  style iiif-gallery fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

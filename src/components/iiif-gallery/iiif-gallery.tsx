@@ -1,4 +1,4 @@
-import { Component, Prop, State, Listen, Event, EventEmitter, Method, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Listen, Event, EventEmitter, Method, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'iiif-gallery',
@@ -68,7 +68,7 @@ export class IIIFGallery {
 	}
 
 	@Method()
-	public reset(): void{
+	public async reset() {
 		this._reset();
 	}
 

@@ -1,52 +1,42 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>IIIF Gallery Component</title> <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css"> <script src="https://unpkg.com/manifesto.js@3.0.6/dist/client/manifesto.bundle.js"></script> <script src="build/iiifgallery.js"></script> </head> <body> <input type="text" name="manifest" id="manifest"><button id="setmanifest">Set Manifest</button> <script>
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>IIIF Gallery Component</title> <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css"> <link rel="modulepreload" href="/build/p-c6d97f34.js"><link rel="modulepreload" href="/build/p-lerbo0th.entry.js"><script src="https://unpkg.com/manifesto.js@3.0.6/dist/client/manifesto.bundle.js"></script>  <script nomodule="" src="/build/iiif-gallery.js"></script> </head> <body> <input type="text" name="manifest" id="manifest"><button id="setmanifest"> Set Manifest </button> <script>
+      //var manifest = 'https://edsilv.github.io/biiif-workshop/collection/index.json';
+      //var manifest = 'https://sophiedixon.github.io/3d-portfolio/collection/ecorche/index.json';
+      //var manifest = 'https://nomad-project.co.uk/objects/collection/index.json';
+      var manifest =
+        "https://nomad-project-preview.netlify.com/collection/index.json";
 
-		//var manifest = 'https://edsilv.github.io/biiif-workshop/collection/index.json';
-		//var manifest = 'https://sophiedixon.github.io/3d-portfolio/collection/ecorche/index.json';
-		//var manifest = 'https://nomad-project.co.uk/objects/collection/index.json';
-		var manifest = 'https://nomad-project-preview.netlify.com/collection/index.json';
+      window.addEventListener("DOMContentLoaded", function() {
+        var manifestInput = document.getElementById("manifest");
+        var setManifest = document.getElementById("setmanifest");
+        var gallery = document.querySelector("iiif-gallery");
 
-		window.addEventListener('DOMContentLoaded', function() {
+        setManifest.addEventListener("click", function() {
+          manifest = manifestInput.value;
+          gallery.manifest = manifest;
+        });
 
-			var manifestInput = document.getElementById('manifest');
-            var setManifest = document.getElementById('setmanifest');
-			var gallery = document.querySelector('iiif-gallery');
+        gallery.addEventListener("selectManifest", function(evt) {
+          console.log("select manifest:", evt.detail.id);
+        });
 
-			setManifest.addEventListener('click', function() {
-                manifest = manifestInput.value;
-                gallery.manifest = manifest;
-            });
+        gallery.addEventListener("selectCollection", function(evt) {
+          console.log("select collection:", evt.detail.id);
+        });
 
-			gallery.addEventListener('selectManifest', function (evt) {
-				console.log('select manifest:', evt.detail.id);
-			});
+        gallery.addEventListener("selectCanvas", function(evt) {
+          console.log("select canvas:", evt.detail.id);
+        });
 
-			gallery.addEventListener('selectCollection', function (evt) {
-				console.log('select collection:', evt.detail.id);
-			});
+        var resetBtn = document.getElementById("reset");
 
-			gallery.addEventListener('selectCanvas', function (evt) {
-				console.log('select canvas:', evt.detail.id);
-			});
+        resetBtn.onclick = function() {
+          gallery.reset();
+        };
 
-			var resetBtn = document.getElementById('reset');
-
-			resetBtn.onclick = function() {
-				gallery.reset();
-			}
-
-			manifestInput.value = manifest;
-		});
-	</script> <!--
+        manifestInput.value = manifest;
+      });
+    </script> <!--
 		https://sophiedixon.github.io/3d-portfolio/collection/index.json
 		https://edsilv.github.io/biiif-workshop/collection/index.json
 		https://docuver.se/uv-app-starter/collection/vague-21/index.json
-	--> <iiif-gallery ignore="https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json"></iiif-gallery> <p> <button id="reset">Reset</button> </p> <script>
-if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  // auto-unregister service worker during dev mode
-  navigator.serviceWorker.getRegistration().then(function(registration) {
-    if (registration) {
-      registration.unregister().then(function() { location.reload(true) });
-    }
-  });
-}
-</script></body></html>
+	--> <iiif-gallery ignore="https://nomad-project.co.uk/objects/collection/wooden-bowl/index.json"></iiif-gallery> <p> <button id="reset">Reset</button> </p> <script type="module" data-resources-url="/build/" data-namespace="iiif-gallery">import{p as e,b as i}from"/build/p-c6d97f34.js";e().then(e=>i([["p-lerbo0th",[[0,"iiif-gallery",{manifest:[1],ignore:[1],items:[32],reset:[64]},[[0,"selectItem","itemSelected"]]],[0,"iiif-gallery-item",{item:[8],selected:[4]}]]]],{resourcesUrl:e}));</script></body></html>
