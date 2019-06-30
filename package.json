@@ -1,6 +1,6 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/remixer/remixer.js",
+  "unpkg": "dist/iiif-gallery/iiif-gallery.js",
   "files": [
     "dist/",
     "loader/"
