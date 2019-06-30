@@ -1,6 +1,6 @@
 {
   "name": "iiif-gallery",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "Display any set of IIIF objects that have thumbnails as a gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

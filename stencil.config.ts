@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'remixer',
+  namespace: 'iiif-gallery',
   outputTargets: [
     {
       type: 'dist',
